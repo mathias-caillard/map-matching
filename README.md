@@ -12,7 +12,7 @@ I framed this as a "map-matching" problem ("Cartopondance" in French). Essential
 ![OSM Example](osm_graph_example.png)
 
 
-To tackle the problem, I used a `Hidden Markov Model` (HMM) combined with the `Viterbi` algorithm. I assumed that:
+To tackle this problem, I used a `Hidden Markov Model` (HMM) combined with the `Viterbi` algorithm. I assumed that:
 - Emission probabilities follow a Gaussian distribution (which takes into account the fact that GPS points are noisy).
   
 - Transition probabilities between connected nodes in the OSM graph are inversely proportional to the distance between them (with Laplace smoothing).
@@ -32,7 +32,7 @@ As you can see, the decoded states (portions of roads/paths, represented in gree
 ![Map-Matching Example2](output_example_2.png)
 
 
-Though, it's not perfect, as it doesn't entirely conver all the actual running path. Also the model predicts some wrong states (but close):
+Though, it's not perfect, as it doesn't entirely conver all the actual running path. Also the model predicts some wrong (but close) states:
 
 ![Map-Matching Example3](output_example_3.png)
 
