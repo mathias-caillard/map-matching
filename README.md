@@ -27,12 +27,11 @@ Here is a result for one GPS track:
 
 ![Map-Matching Example](output_example_1.png)
 
-As you can see, the decoded states (portions of roads/paths, represented in green) obtained from the ``HMM`` represents a more accurate approximation of the actual observations (sequence of GPS points, repesented in red), as it "cancels" the noise:
+As you can see, the decoded states (portions of roads/paths, represented in green) obtained from the ``HMM`` represents a more accurate approximation of the actual path ran than the observations (sequence of GPS points, repesented in red), as it "cancels" the noise:
 
 ![Map-Matching Example2](output_example_2.png)
 
-
-Though, it's not perfect, as it doesn't entirely cover all the actual running path. Also, the model predicts some wrong (though close) states:
+A better estimation of the actual running path allows to derive a better estimation of the actual distance covered. Though, obtained results aren't perfect, as there are sometimes some mismatches; the model sometimes predicts some wrong (though close) states:
 
 ![Map-Matching Example3](output_example_3.png)
 
