@@ -2,7 +2,7 @@
 
 ## Context
 
-During my stay in Busan, I noticed that my running mobile application consistently overestimated the distance I ran. The reason is due to noisy GPS data, mainly caused by the dense presence of bridges I went under during my runs, which degraded the quality of the GPS signals.
+During my stay in Busan, I noticed that my running mobile application consistently overestimated the distance I ran. The reason is due to noisy GPS data, mainly caused by the dense presence of bridges I went under, which degraded the quality of the GPS signals.
 
 The goal of this small project is to develop a program for better estimating the actual distance of my runs done there. Of course, I could simply use Google Maps and its "measure distance" tool to calculate this manually in 30 seconds. Instead I spent 3 days implementing an automatic and Pythonic approach (:D).
 
@@ -13,9 +13,9 @@ I framed this as a "map-matching" problem ("Cartopondance" in French). Essential
 
 
 To tackle this problem, I used a `Hidden Markov Model` (HMM) combined with the `Viterbi` algorithm. I assumed that:
-- Emission probabilities follow a Gaussian distribution (which takes into account the fact that GPS points are noisy).
+- Emission probabilities follow a Gaussian distribution (this models the GPS noise).
+- Transition probabilities between connected nodes in the OSM graph are inversely proportional to the distance between them, with Laplace smoothing (this models paths and roads).
   
-- Transition probabilities between connected nodes in the OSM graph are inversely proportional to the distance between them (with Laplace smoothing).
 ## Results
 Here is a result for one GPS track:
 | **Metric**                      | **Value**     | **Difference (%)** |
