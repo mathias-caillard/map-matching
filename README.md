@@ -27,7 +27,7 @@ Here is a result for one GPS track:
 
 ![Map-Matching Example](output_example_1.png)
 
-As you can see, the decoded states (portions of roads/paths) obtained from the ``HMM`` represents a more accurate approximation of the actual running path than raw GPS points (as it "cancels" the noise):
+As you can see, the decoded states (portions of roads/paths, represented in green) obtained from the ``HMM`` represents a more accurate approximation of the actual observations (sequence of GPS points, repesented in red), as it "cancels" the noise:
 
 ![Map-Matching Example2](output_example_2.png)
 
@@ -38,6 +38,4 @@ Though, it's not perfect, as it doesn't entirely conver all the actual running p
 
 ## Conclusion
 
-Surprisingly, results aren't too bad. 
-
-For better results I could have introduced a Kalman filter to preprocess GPS points (make them less noisy beforehand), and to better estimate the predicted output (by taking into account the running speed);
+Results aren't too bad and it allows me to get a better estimation of the actual distance covered during my runs. For better results I could have introduced a Kalman filter to preprocess GPS points (make them less noisy beforehand) and to take into account the running speed.
